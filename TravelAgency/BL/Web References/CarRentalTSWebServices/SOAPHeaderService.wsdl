@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCarRentals">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCarRentalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarRentalsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCredentials" type="tns:UserCredentials" />
+      <s:complexType name="UserCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="carRentalId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableCars">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="carRentalId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableCarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableCarsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="carId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="carNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLocked" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="passengerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updatedUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BookCarResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookedCars">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="carId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookedCarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookedCarsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="carId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paidAmount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCarRentalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarRentals" />
+  </wsdl:message>
+  <wsdl:message name="GetCarRentalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarRentalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarRentalsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetCarSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCar" />
+  </wsdl:message>
+  <wsdl:message name="GetCarSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableCarsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableCars" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableCarsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableCarsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="BookCarSoapIn">
+    <wsdl:part name="parameters" element="tns:BookCar" />
+  </wsdl:message>
+  <wsdl:message name="BookCarSoapOut">
+    <wsdl:part name="parameters" element="tns:BookCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookCarUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedCarsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookedCars" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedCarsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookedCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedCarsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSlot" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmSlot" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSlot" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="TestService">
+    <wsdl:operation name="GetCarRentals">
+      <wsdl:input message="tns:GetCarRentalsSoapIn" />
+      <wsdl:output message="tns:GetCarRentalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <wsdl:input message="tns:GetCarSoapIn" />
+      <wsdl:output message="tns:GetCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableCars">
+      <wsdl:input message="tns:GetAvailableCarsSoapIn" />
+      <wsdl:output message="tns:GetAvailableCarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookCar">
+      <wsdl:input message="tns:BookCarSoapIn" />
+      <wsdl:output message="tns:BookCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedCars">
+      <wsdl:input message="tns:GetBookedCarsSoapIn" />
+      <wsdl:output message="tns:GetBookedCarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <wsdl:input message="tns:UpdateSlotSoapIn" />
+      <wsdl:output message="tns:UpdateSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <wsdl:input message="tns:ConfirmSlotSoapIn" />
+      <wsdl:output message="tns:ConfirmSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <wsdl:input message="tns:DeleteSlotSoapIn" />
+      <wsdl:output message="tns:DeleteSlotSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestService" type="tns:TestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCarRentals">
+      <soap:operation soapAction="http://tempuri.org/GetCarRentals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCarRentalsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <soap:operation soapAction="http://tempuri.org/GetCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCarUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableCars">
+      <soap:operation soapAction="http://tempuri.org/GetAvailableCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAvailableCarsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCar">
+      <soap:operation soapAction="http://tempuri.org/BookCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BookCarUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedCars">
+      <soap:operation soapAction="http://tempuri.org/GetBookedCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBookedCarsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <soap:operation soapAction="http://tempuri.org/UpdateSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <soap:operation soapAction="http://tempuri.org/ConfirmSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConfirmSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <soap:operation soapAction="http://tempuri.org/DeleteSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestService1" type="tns:TestService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCarRentals">
+      <soap12:operation soapAction="http://tempuri.org/GetCarRentals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCarRentalsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <soap12:operation soapAction="http://tempuri.org/GetCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCarUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableCars">
+      <soap12:operation soapAction="http://tempuri.org/GetAvailableCars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAvailableCarsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookCar">
+      <soap12:operation soapAction="http://tempuri.org/BookCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BookCarUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedCars">
+      <soap12:operation soapAction="http://tempuri.org/GetBookedCars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBookedCarsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConfirmSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPHeaderService">
+    <wsdl:port name="TestService" binding="tns:TestService">
+      <soap:address location="http://localhost:64576/CarRentalTSWebServices/SOAPHeaderService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestService1" binding="tns:TestService1">
+      <soap12:address location="http://localhost:64576/CarRentalTSWebServices/SOAPHeaderService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

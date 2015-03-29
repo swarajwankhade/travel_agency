@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BL_AirwayTSWebServices_SOAPHeaderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7534/AirwayTSWebServices/SOAPHeaderService.asmx</Value>
+    </Setting>
+    <Setting Name="BL_CarRentalTSWebServices_SOAPHeaderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64576/CarRentalTSWebServices/SOAPHeaderService.asmx</Value>
+    </Setting>
+    <Setting Name="BL_HotelTSWebServices_SOAPHeaderService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:43663/HotelTSWebServices/SOAPHeaderService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency", "TravelAgency\TravelAgency.csproj", "{B8A8BD13-05EE-442D-8050-9924A389A81D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AirwayTSWebServices", "..\AirwayTSWebServices\", "{045F45BE-1DF4-4EC2-9831-67794127A186}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/AirwayTSWebServices"
+		Debug.AspNetCompiler.PhysicalPath = "..\AirwayTSWebServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AirwayTSWebServices\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AirwayTSWebServices"
+		Release.AspNetCompiler.PhysicalPath = "..\AirwayTSWebServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AirwayTSWebServices\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "7534"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{486FDD8F-BDB8-4077-8F89-4A27FB12E1D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{46773ACA-C76F-4F4D-BF32-198DE0844DDD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarRentalTSWebServices", "..\CarRentalTSWebServices\", "{571775BA-27B7-45B9-AE0B-7A90DABC4FA6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/CarRentalTSWebServices"
+		Debug.AspNetCompiler.PhysicalPath = "..\CarRentalTSWebServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CarRentalTSWebServices\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CarRentalTSWebServices"
+		Release.AspNetCompiler.PhysicalPath = "..\CarRentalTSWebServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CarRentalTSWebServices\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64576"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HotelTSWebServices", "..\HotelTSWebServices\", "{86CF4520-6AA8-4A10-860E-A96A2E3A3F32}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/HotelTSWebServices"
+		Debug.AspNetCompiler.PhysicalPath = "..\HotelTSWebServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HotelTSWebServices\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/HotelTSWebServices"
+		Release.AspNetCompiler.PhysicalPath = "..\HotelTSWebServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HotelTSWebServices\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "43663"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8A8BD13-05EE-442D-8050-9924A389A81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A8BD13-05EE-442D-8050-9924A389A81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A8BD13-05EE-442D-8050-9924A389A81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A8BD13-05EE-442D-8050-9924A389A81D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045F45BE-1DF4-4EC2-9831-67794127A186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045F45BE-1DF4-4EC2-9831-67794127A186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045F45BE-1DF4-4EC2-9831-67794127A186}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{045F45BE-1DF4-4EC2-9831-67794127A186}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{486FDD8F-BDB8-4077-8F89-4A27FB12E1D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486FDD8F-BDB8-4077-8F89-4A27FB12E1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486FDD8F-BDB8-4077-8F89-4A27FB12E1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486FDD8F-BDB8-4077-8F89-4A27FB12E1D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46773ACA-C76F-4F4D-BF32-198DE0844DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46773ACA-C76F-4F4D-BF32-198DE0844DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46773ACA-C76F-4F4D-BF32-198DE0844DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46773ACA-C76F-4F4D-BF32-198DE0844DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{571775BA-27B7-45B9-AE0B-7A90DABC4FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{571775BA-27B7-45B9-AE0B-7A90DABC4FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{571775BA-27B7-45B9-AE0B-7A90DABC4FA6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{571775BA-27B7-45B9-AE0B-7A90DABC4FA6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{86CF4520-6AA8-4A10-860E-A96A2E3A3F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CF4520-6AA8-4A10-860E-A96A2E3A3F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CF4520-6AA8-4A10-860E-A96A2E3A3F32}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CF4520-6AA8-4A10-860E-A96A2E3A3F32}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

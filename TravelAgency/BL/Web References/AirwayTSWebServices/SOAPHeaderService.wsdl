@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAirlines">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAirlinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirlinesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCredentials" type="tns:UserCredentials" />
+      <s:complexType name="UserCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetAirbus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airlineId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirbusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirbusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="airbusId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paidAmount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bookId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSlots">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airbusId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSlotsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSlotsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookedSlots">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airbusId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookedSlotsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookedSlotsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookSlot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airbusId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="seatNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLocked" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="passengerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updatedUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookSlotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BookSlotResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSlotsTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airbusId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="travelDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSlotsTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSlotsTestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAirlinesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirlines" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlinesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirlinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirlinesUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetAirbusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirbus" />
+  </wsdl:message>
+  <wsdl:message name="GetAirbusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirbusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirbusUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSlot" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmSlot" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSlot" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetSlotsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSlots" />
+  </wsdl:message>
+  <wsdl:message name="GetSlotsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSlotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSlotsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedSlotsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookedSlots" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedSlotsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookedSlotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookedSlotsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="BookSlotSoapIn">
+    <wsdl:part name="parameters" element="tns:BookSlot" />
+  </wsdl:message>
+  <wsdl:message name="BookSlotSoapOut">
+    <wsdl:part name="parameters" element="tns:BookSlotResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookSlotUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetSlotsTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSlotsTest" />
+  </wsdl:message>
+  <wsdl:message name="GetSlotsTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSlotsTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TestService">
+    <wsdl:operation name="GetAirlines">
+      <wsdl:input message="tns:GetAirlinesSoapIn" />
+      <wsdl:output message="tns:GetAirlinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirbus">
+      <wsdl:input message="tns:GetAirbusSoapIn" />
+      <wsdl:output message="tns:GetAirbusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <wsdl:input message="tns:UpdateSlotSoapIn" />
+      <wsdl:output message="tns:UpdateSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <wsdl:input message="tns:ConfirmSlotSoapIn" />
+      <wsdl:output message="tns:ConfirmSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <wsdl:input message="tns:DeleteSlotSoapIn" />
+      <wsdl:output message="tns:DeleteSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlots">
+      <wsdl:input message="tns:GetSlotsSoapIn" />
+      <wsdl:output message="tns:GetSlotsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedSlots">
+      <wsdl:input message="tns:GetBookedSlotsSoapIn" />
+      <wsdl:output message="tns:GetBookedSlotsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookSlot">
+      <wsdl:input message="tns:BookSlotSoapIn" />
+      <wsdl:output message="tns:BookSlotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSlotsTest">
+      <wsdl:input message="tns:GetSlotsTestSoapIn" />
+      <wsdl:output message="tns:GetSlotsTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestService" type="tns:TestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAirlines">
+      <soap:operation soapAction="http://tempuri.org/GetAirlines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAirlinesUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirbus">
+      <soap:operation soapAction="http://tempuri.org/GetAirbus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAirbusUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <soap:operation soapAction="http://tempuri.org/UpdateSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <soap:operation soapAction="http://tempuri.org/ConfirmSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConfirmSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <soap:operation soapAction="http://tempuri.org/DeleteSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlots">
+      <soap:operation soapAction="http://tempuri.org/GetSlots" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSlotsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedSlots">
+      <soap:operation soapAction="http://tempuri.org/GetBookedSlots" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBookedSlotsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookSlot">
+      <soap:operation soapAction="http://tempuri.org/BookSlot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BookSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlotsTest">
+      <soap:operation soapAction="http://tempuri.org/GetSlotsTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestService1" type="tns:TestService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAirlines">
+      <soap12:operation soapAction="http://tempuri.org/GetAirlines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAirlinesUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirbus">
+      <soap12:operation soapAction="http://tempuri.org/GetAirbus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAirbusUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSlot">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSlot">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConfirmSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSlot">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlots">
+      <soap12:operation soapAction="http://tempuri.org/GetSlots" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSlotsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookedSlots">
+      <soap12:operation soapAction="http://tempuri.org/GetBookedSlots" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBookedSlotsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookSlot">
+      <soap12:operation soapAction="http://tempuri.org/BookSlot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BookSlotUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSlotsTest">
+      <soap12:operation soapAction="http://tempuri.org/GetSlotsTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPHeaderService">
+    <wsdl:port name="TestService" binding="tns:TestService">
+      <soap:address location="http://localhost:7534/AirwayTSWebServices/SOAPHeaderService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestService1" binding="tns:TestService1">
+      <soap12:address location="http://localhost:7534/AirwayTSWebServices/SOAPHeaderService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
